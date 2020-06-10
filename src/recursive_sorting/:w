@@ -23,16 +23,16 @@ def merge(arrA, arrB):
             b_idx += 1
             main_idx +=1
 
-    while a_idx < a_end:
+        while a_idx < a_end:
             merged_arr[main_idx] = arrA[a_idx]
             a_idx += 1
             main_idx += 1
 
-    while b_idx < b_end:
+        while b_idx < b_end:
             merged_arr[main_idx] = arrB[b_idx]
             b_idx += 1
             main_idx += 1
-    return merged_arr
+        return merged_arr
 
    
 
@@ -40,27 +40,28 @@ def merge(arrA, arrB):
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort(arr):
  ### Break the array down recursively
- # Base case: when the list gets down to the lengths of 1
-     if len(arr) > 1:
-    
-         left = merge_sort(arr[0: len(arr) // 2])
-         right = merge_sort(arr[len(arr) // 2:])
-         arr = merge(left, right)   # merge() defined later
-     return arr
+    if len(arr) > 1:
+       # return arr
 
+        left = merge_sort(arr[:len(arr)//2])
+        right = merge_sort(arr[len(arr)//2:])
+        arr = merge(left, right)
+ # Base case: when the list gets down to the lengths of 1
  # Merge them back together 
     # Your code here
-#    arr_size = len(arr)
-#
-#        if arr_size < 2:
-#            return arr
-#
-#    mid = arr_size // 2
-#
-#    sortedLeft = merge_sort(arr[:mid])
-#    sortedRight = merge_sort(arr[mid:arr_size+1])
-#
-#    return merge(sortedLeft, sortedRight)
+ #   arr_size = len(arr)
+
+ #   if arr_size > 1:
+ #      ## return arr
+
+ #       mid = arr_size // 2
+
+ #       print(arr)
+ #       sortedLeft = merge_sort(arr[:mid])
+ #       sortedRight = merge_sort(arr[mid:])
+ #       arr = merge(sortedLeft, sortedRight)
+    return arr
+
 
 #implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
